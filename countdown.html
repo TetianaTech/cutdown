@@ -26,7 +26,7 @@
     <p class="countdown__title">Days</p>
     <script>
         const currentDate = new Date();
-        const targetDate = new Date(2024-03-15);
+        const targetDate = new Date('2024-03-15');
         const timeDifference = targetDate.getTime() - currentDate.getTime();
         const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
         document.getElementById('countdown').innerText = daysDifference;
