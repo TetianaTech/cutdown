@@ -5,36 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown Widget</title>
     <style>
-        body {
-            background-color: black; /* Set the background color to black */
-            color: white; /* Set the text color to white */
-            font-family: 'Arial', sans-serif; /* Set the font family (adjust as needed) */
+        .countdown {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
         }
 
-        #countdown {
-            font-size: 24px; /* Set the font size (adjust as needed) */
+        .countdown__title {
+            text-transform: uppercase;
+            
+        }
+
+        .countdown__value {
+            font-size: 32px;
         }
     </style>
 </head>
-<body>
-    <h2>Days Until Event:</h2>
-    <p id="countdown"></p>
-
+<body class=countdown>
+    <p class="countdown__value" id="countdown"></p>
+    <p class="countdown__title">Days</p>
     <script>
-        function calculateDaysUntilEvent(eventDate) {
-            const currentDate = new Date();
-            const targetDate = new Date(eventDate);
-
-            const timeDifference = targetDate.getTime() - currentDate.getTime();
-            const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
-
-            return daysDifference;
-        }
-
-        // Replace '2024-01-31' with your event date
-        const eventDate = '2024-01-31';
-        const daysUntilEvent = calculateDaysUntilEvent(eventDate);
-        document.getElementById('countdown').innerText = daysUntilEvent + ' days';
+        const currentDate = new Date();
+        const targetDate = new Date(2024-03-15);
+        const timeDifference = targetDate.getTime() - currentDate.getTime();
+        const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+        document.getElementById('countdown').innerText = daysDifference;
     </script>
 </body>
 </html>
