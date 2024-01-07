@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Widget</title>
+</head>
+<body>
+    <h2>Days Until Event:</h2>
+    <p id="countdown"></p>
+
+    <script>
+        function calculateDaysUntilEvent(eventDate) {
+            const currentDate = new Date();
+            const targetDate = new Date(eventDate);
+
+            const timeDifference = targetDate.getTime() - currentDate.getTime();
+            const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+            return daysDifference;
+        }
+
+        // Replace '2024-01-31' with your event date
+        const eventDate = '2024-01-31';
+        const daysUntilEvent = calculateDaysUntilEvent(eventDate);
+        document.getElementById('countdown').innerText = daysUntilEvent + ' days';
+    </script>
+</body>
+</html>
