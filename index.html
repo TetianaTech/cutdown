@@ -12,7 +12,7 @@
             justify-content: center;
             color: white;
             width: 60px;
-            height: 100px;
+            color: pink;
             font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
         }
 
@@ -27,13 +27,14 @@
 </head>
 <body class=countdown>
     <p class="countdown__value" id="countdown"></p>
-    <p class="countdown__title">Days</p>
     <script>
-        const currentDate = new Date();
-        const targetDate = new Date('2024-03-15');
-        const timeDifference = targetDate.getTime() - currentDate.getTime();
-        const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
-        document.getElementById('countdown').innerText = daysDifference;
+        setInterval(() => {
+            const currentDate = new Date();
+            const targetDate = new Date('2024-03-17');
+            const timeDifference = targetDate.getTime() - currentDate.getTime();
+            const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+            document.getElementById('countdown').innerText = daysDifference;
+        }, 1000 * 60 * 60)
     </script>
 </body>
 </html>
